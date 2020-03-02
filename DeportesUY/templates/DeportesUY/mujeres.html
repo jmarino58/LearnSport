@@ -1,0 +1,38 @@
+{% block content %}
+{% if user.is_authenticated %}
+{% block title %}<title>{{user.first_name }} {{user.last_name }}</title>{% endblock %}
+    {% include "DeportesUY/entrenador.html" %}
+{% else %}
+    {% include "DeportesUY/index.html" %}
+{% endif %}
+{% endblock %}
+{% load static %}
+<div class="tabla" >
+
+{% block tabla %}
+        <h2 style="color:black">Sub 20 - Femenino</h2>
+
+{% if user.is_authenticated %}
+    <table id="mujeresA" style="width:50%">
+{% else %}
+    <table id="mujeresA1">
+{% endif %}
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Altura</th>
+            <th>Peso</th>
+            <th>Posición</th>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+</table>
+</table>
+</div>
+
+        {% endblock %}

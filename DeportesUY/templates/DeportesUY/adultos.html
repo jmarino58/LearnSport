@@ -1,0 +1,36 @@
+{% block content %}
+{% if user.is_authenticated %}
+{% block title %}<title>{{user.first_name }} {{user.last_name }}</title>{% endblock %}
+    {% include "DeportesUY/entrenador.html" %}
+{% else %}
+    {% include "DeportesUY/index.html" %}
+{% endif %}
+{% endblock %}
+{% load static %}
+<div class="tabla" >
+
+{% block tabla %}
+
+{% if user.is_authenticated %}
+    <table id="Adultos-A" style="width:50%">
+{% else %}
+    <table id="Adultos1-A">
+{% endif %}
+
+        <h2 style="color:black">Adultos</h2>
+
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Altura</th>
+            <th>Peso</th>
+            <th>Posición</th>
+
+        </tr>
+
+    </table>
+    </table>
+</div>
+{% endblock %}
+

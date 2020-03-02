@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontello.css' %}">
+    <link rel="stylesheet" href="{% static 'css/entrenador.css' %}">
+        {% block title %}<title>DeportesUY Home</title>{% endblock %}
+</head>
+
+<header style="left: 0; top: 0px; height: 90px;">
+       {% block content %}
+       {% endblock %}
+
+</header>
+<body class="base">
+<div class="content container" >
+{% block sidebar %}
+        <div class="slide">
+        <a href="{% url 'ninos' %}">
+        <div class="cuadrado" id="uno">
+        <img class="icono" src="{% static 'img/niños.png' %}">
+        <p class="texto">Niños</p>
+    </div>
+        </a>
+
+        <a href="{% url 'juveniles' %}">
+    <div class="cuadrado" id="dos">
+        <img class="icono" src="{% static 'img/juveniles.png' %}">
+        <p class="texto">Juveniles</p>
+    </div>
+        </a>
+
+        <a href="{% url 'varones' %}">
+    <div class="cuadrado" id="tres">
+        <img class="icono" src="{% static 'img/varones.png' %}">
+        <p class="texto">Sub20</p>
+    </div>
+        </a>
+
+        <a href="{% url 'mujeres' %}">
+    <div class="cuadrado" id="cuatro">
+       <img class="icono" src="{% static 'img/mujeres.png' %}">
+       <p class="texto">Sub20</p>
+    </div>
+        </a>
+
+        <a href="{% url 'mayores' %}">
+    <div class="cuadrado" id="cinco">
+        <img class="icono" src="{% static 'img/mayores.png' %}">
+        <p class="texto">Mayores</p>
+    </div>
+        </a>
+
+        <a href="{% url 'adultos' %}" >
+    <div class="cuadrado" id="seis">
+        <img class="icono" src="{% static 'img/adultos.png' %}">
+        <p class="texto">Senior</p>
+    </div>
+        </a>
+</div>
+</div>
+{% endblock %}
+<br>
+<section style="float:left; width:50%">
+{% block tabla %}
+{% endblock %}
+</section>
+<aside style="float:right; width:50%;">
+{% block rutinas %}
+{% endblock %}
+</aside>
+
+</body>
+<!--
+{% block footer %}
+<footer>
+    <div class="footer">
+        <p id="pie-pagina">© GarbageCollector Group</p>
+    </div>
+</footer>
+{% endblock %}
+-->
+</html>

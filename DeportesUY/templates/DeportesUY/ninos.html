@@ -1,0 +1,82 @@
+{% block content %}
+{% if user.is_authenticated %}
+{% block title %}<title>{{user.first_name }} {{user.last_name }}</title>{% endblock %}
+    {% include "DeportesUY/entrenador.html" %}
+{% else %}
+    {% include "DeportesUY/index.html" %}
+{% endif %}
+{% endblock %}
+{% load static %}
+
+<div class="tabla" >
+<h2 style="color:black;">Niños</h2>
+    {% block tabla %}
+{% if user.is_authenticated %}
+    <table id="Niños" style="width:50%;">
+{% else %}
+    <table id="Niños1">
+{% endif %}
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Altura</th>
+            <th>Peso</th>
+            <th>Posición</th>
+
+        </tr>
+        <tr>
+            <td>Juan</td>
+            <td>Perez</td>
+            <td>7 años</td>
+            <td>Armador</td>
+            <td></td><td></td>
+        </tr>
+        <tr>
+            <td>Ana</td>
+            <td>Moreira</td>
+            <td>7 años</td>
+            <td>Punta</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Lucía</td>
+            <td>Lopez</td>
+            <td>8 años</td>
+            <td>Punta</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Lucas</td>
+            <td>Rodiguez</td>
+            <td>8 años</td>
+            <td>Central</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Bruno</td>
+            <td>Gomez</td>
+            <td>8 años</td>
+            <td>Central</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Nadia</td>
+            <td>Mendez</td>
+            <td>7 años</td>
+            <td>Opuesto</td>
+            <td></td>
+            <td></td>
+        </tr>
+</table>
+</table>
+</div>
+
+
+{% endblock %}
+
+

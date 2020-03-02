@@ -1,0 +1,27 @@
+.tabla{
+/*
+float:left;
+width: 1200px;
+
+
+margin:5px auto;
+*/
+}
+table{
+    width: 100%;
+    background-color: white;
+    text-align: left;
+    border-collapse: collapse;
+    /*padding:20px;*/
+}
+
+th, td {
+    padding:10px;
+}
+th{
+    background-color:#333;
+    color: white
+}
+tr:nth-child(even){
+    background-color: #ddd;
+}

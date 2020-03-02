@@ -1,0 +1,34 @@
+{% extends "DeportesUY/base.html" %}
+{% load static %}
+{% block content %}
+<!--<form method="post"> </form>-->
+
+{% if form.errors %}
+<p  align="center" class="mensaje_error">Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p>Please login to see this page.</p>
+    {% endif %}
+{% endif %}
+<body style="background-image: url({% static 'img/home.jpg' %});">
+
+<div class="contenedor" >
+        <h1>DeportesUY</h1>
+    <form method="post" class="login-form" action="login">
+        {% csrf_token %}
+        <p align="right">Usuario:</label><input class="input-ingresar" type="text" id="usuario" name="username" size="15"> <br>
+        Contraseña:</label><input class="input-ingresar" id="contraseña" type="password" name="password" size="15"><br>
+            <input class="button" type="submit" value="Iniciar sesión" >
+        </p>
+</form>
+
+</div>
+{% endblock %}
+
+</body>
+

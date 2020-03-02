@@ -1,0 +1,139 @@
+{% block content %}
+{% if user.is_authenticated %}
+{% block title %}<title>{{user.first_name }} {{user.last_name }}</title>{% endblock %}
+    {% include "DeportesUY/entrenador.html" %}
+{% else %}
+    {% include "DeportesUY/index.html" %}
+{% endif %}
+{% endblock %}
+{% load static %}
+<div class="tabla" >
+{% block tabla %}
+{% if user.is_authenticated %}
+    <table id="juveniles" style="width:50%">
+{% else %}
+    <table id="juveniles2">
+{% endif %}
+
+<h2 style="color:black"> Sub 15 - Masculino</h2>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Altura</th>
+            <th>Peso</th>
+            <th>Posición</th>
+
+        </tr>
+        <tr>
+            <td>Juan</td>
+            <td>Perez</td>
+            <td>14 añoz</td>
+            <td>Armador</td>
+            <td></td><td></td>
+        </tr>
+        <tr>
+            <td>Anibal</td>
+            <td>Moreira</td>
+            <td>13 años</td>
+            <td>Punta</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Lucio</td>
+            <td>Lopez</td>
+            <td>14 años</td>
+            <td>Punta</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Lucas</td>
+            <td>Rodiguez</td>
+            <td>15 años</td>
+            <td>Central</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Bruno</td>
+            <td>Gomez</td>
+            <td>15 años</td>
+            <td>Central</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Nicolas</td>
+            <td>Mendez</td>
+            <td>14 años</td>
+            <td>Opuesto</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+  <h2> Sub 15 - Femenino</h2>
+    <table id="tabla-niños">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Altura</th>
+            <th>Peso</th>
+            <th>Posición</th>
+
+        </tr>
+        <tr>
+            <td>Julieta</td>
+            <td>Perez</td>
+            <td>14 años</td>
+            <td>Armador</td>
+            <td></td><td></td>
+        </tr>
+        <tr>
+            <td>Anlia</td>
+            <td>Moreira</td>
+            <td>13 años</td>
+            <td>Punta</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Luciana</td>
+            <td>Lopez</td>
+            <td>14 años</td>
+            <td>Punta</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Lucia</td>
+            <td>Rodiguez</td>
+            <td>15 años</td>
+            <td>Central</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Brunela</td>
+            <td>Gomez</td>
+            <td>15 años</td>
+            <td>Central</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Nadia</td>
+            <td>Mendez</td>
+            <td>14 años</td>
+            <td>Opuesto</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+    </table>
+    </div>
+    {% endblock %}
